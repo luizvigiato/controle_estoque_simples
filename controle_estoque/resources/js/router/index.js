@@ -1,21 +1,28 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import DefaultLayout from '@/layouts/DefaultLayout.vue';
+import Dashboard from '@/components/Dashboard.vue';
 import FornecedorForm from '@/components/FornecedorForm.vue';
+import FornecedoresTable from '@/components/FornecedoresTable.vue';
 
 const routes = [
   {
     path: '/',
-    component: DefaultLayout, // Layout principal
+    component: DefaultLayout,
     children: [
       {
-        path: '', // Rota principal (Dashboard)
+        path: '', // Dashboard como rota padrão
         name: 'Dashboard',
-        component: () => import('@/components/Dashboard.vue'),
+        component: Dashboard,
       },
       {
-        path: 'cadastro-fornecedor', // Rota para o formulário de cadastro
+        path: 'cadastro-fornecedor',
         name: 'CadastroFornecedor',
         component: FornecedorForm,
+      },
+      {
+        path: 'fornecedores',
+        name: 'Fornecedores',
+        component: FornecedoresTable,
       },
     ],
   },

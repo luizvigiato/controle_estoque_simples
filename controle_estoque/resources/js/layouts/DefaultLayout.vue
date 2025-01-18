@@ -16,6 +16,7 @@
       <v-app-bar app>
         <v-toolbar-title>Dashboard</v-toolbar-title>
       </v-app-bar>
+      <!-- Renders the content of the active route -->
       <router-view />
     </v-main>
   </v-app>
@@ -28,7 +29,8 @@ export default {
       items: [
         { text: 'Dashboard', icon: 'mdi-view-dashboard', link: '/' },
         { text: 'Configurações', icon: 'mdi-cog', link: '/settings' },
-        { text: 'Cadastro de Fornecedor', icon: 'mdi-account-plus', link: '/cadastro-fornecedor' }, // Novo item
+        { text: 'Cadastro de Fornecedor', icon: 'mdi-account-plus', link: '/cadastro-fornecedor' },
+        { text: 'Fornecedores', icon: 'mdi-account-group', link: '/fornecedores' },
       ],
     };
   },
@@ -39,7 +41,6 @@ export default {
   },
 };
 </script>
-
 
 <style scoped>
 /* Estilos adicionais se necessário */
