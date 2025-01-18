@@ -28,6 +28,7 @@ export default {
       items: [
         { text: 'Dashboard', icon: 'mdi-view-dashboard', link: '/' },
         { text: 'Configurações', icon: 'mdi-cog', link: '/settings' },
+        { text: 'Cadastro de Fornecedor', icon: 'mdi-account-plus', link: '/cadastro-fornecedor' }, // Novo item
       ],
     };
   },
@@ -38,6 +39,7 @@ export default {
   },
 };
 </script>
+
 
 <style scoped>
 /* Estilos adicionais se necessário */

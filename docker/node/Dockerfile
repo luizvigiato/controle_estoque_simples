@@ -7,13 +7,13 @@ WORKDIR /app
 RUN npm install -g npm@11.0.0
 
 # Instalar ferramentas globais necessárias
-RUN npm install -g vite @vue/cli dotenv
+RUN npm install -g vite @vue/cli dotenv 
 
 # Copiar arquivos do projeto necessários para instalar dependências
 COPY package*.json ./
 
 # Instalar dependências do projeto, incluindo Vue 3, Vite e Vuetify
-RUN npm install vue @vitejs/plugin-vue vuetify material-design-icons-iconfont material-design-kit @mdi/font sass
+RUN npm install vue @vitejs/plugin-vue vuetify material-design-icons-iconfont material-design-kit @mdi/font sass vue-router @mdi/font
 
 # Instalar dependências do projeto
 RUN npm install
