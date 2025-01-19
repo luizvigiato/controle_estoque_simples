@@ -9,9 +9,14 @@
           :headers="headers"
           :items="fornecedores"
           item-value="id"
-          @click:row="openModal"
-          dense
         >
+          <template v-slot:item="{ item }">
+            <tr @click="openModal(item.id)">
+              <td>{{ item.nome }}</td>
+              <td>{{ item.cidade }}</td>
+              <td>{{ item.telefone }}</td>
+            </tr>
+          </template>
         </v-data-table>
       </v-card-text>
     </v-card>
@@ -64,10 +69,10 @@ export default {
       });
     },
     // Abrir o modal com os dados do fornecedor
-    openModal(fornecedor) {
-      console.log('Fornecedor selecionado:', fornecedor); // Log para depuração
-      this.selectedFornecedor = fornecedor; // Atribuir os dados do fornecedor
-      this.dialog = true; // Abrir o modal
+    openModal(fornecedorId) {
+      this.selectedFornecedor = this.fornecedores.find(f => f.id === fornecedorId); // Buscar pelo ID
+      console.log(this.selectedFornecedor);
+      this.dialog = true;
     },
   },
   mounted() {
